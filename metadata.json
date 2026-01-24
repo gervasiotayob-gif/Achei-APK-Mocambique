@@ -1,0 +1,7 @@
+{
+  "name": "ACHEI MOZ",
+  "description": "Uma plataforma solidária para ajudar moçambicanos a encontrarem e devolverem documentos perdidos, unindo a nação com honestidade e segurança.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
