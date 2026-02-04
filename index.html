@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pt-MZ">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>ACHEI MOZ</title>
+  <title>ACHEI MOZ - Encontre seus documentos</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
@@ -24,7 +23,7 @@
       width: max-content;
     }
     
-    /* Mozambique Flag Colors */
+    /* Cores da Bandeira de Moçambique */
     .bg-moz-green { background-color: #009739; }
     .bg-moz-black { background-color: #000000; }
     .bg-moz-yellow { background-color: #FFD200; }
@@ -35,7 +34,7 @@
     .border-moz-green { border-color: #009739; }
     .border-moz-red { border-color: #D21034; }
 
-    /* Beautiful Mesh Background Animation */
+    /* Fundo Mesh Animado */
     @keyframes meshGradient {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -47,7 +46,7 @@
       animation: meshGradient 15s ease infinite;
     }
 
-    /* Floating Flag Animation */
+    /* Bandeira Flutuante */
     @keyframes floatingFlag {
       0% { transform: translateY(0) rotate(0deg); }
       33% { transform: translateY(-15px) rotate(2deg); }
@@ -58,7 +57,7 @@
       animation: floatingFlag 6s ease-in-out infinite;
     }
 
-    /* Pulse for loading text */
+    /* Pulso Suave */
     @keyframes softPulse {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.8; transform: scale(0.98); }
@@ -67,13 +66,23 @@
       animation: softPulse 3s ease-in-out infinite;
     }
 
-    /* Scrollbar hide */
-    .hide-scrollbar::-webkit-scrollbar {
-      display: none;
+    /* Push Notification Animation */
+    @keyframes slideDownIn {
+      0% { transform: translateY(-100%); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
     }
-    .hide-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+    .animate-push {
+      animation: slideDownIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .doc-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .doc-card:active {
+      transform: scale(0.97);
     }
   </style>
 <script type="importmap">
@@ -84,14 +93,13 @@
     "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
     "lucide-react": "https://esm.sh/lucide-react@^0.475.0",
     "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
   }
 }
 </script>
 </head>
 <body>
   <div id="root"></div>
-  <script type="module" src="index.tsx"></script>
 </body>
 </html>
